@@ -1,4 +1,4 @@
-package com.example.coroutine
+package com.example.coroutine.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
@@ -7,14 +7,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeout
 
-/**
- * TitleRepository provides an interface to fetch a title or request a new one be generated.
- *
- * Repository modules handle data operations. They provide a clean API so that the rest of the app
- * can retrieve this data easily. They know where to get the data from and what API calls to make
- * when data is updated. You can consider repositories to be mediators between different data
- * sources, in our case it mediates between a network API and an offline database cache.
- */
 class TitleRepository(val network: MainNetwork, val titleDao: TitleDao) {
 
     /**
@@ -40,7 +32,7 @@ class TitleRepository(val network: MainNetwork, val titleDao: TitleDao) {
             val result = withTimeout(5_000) {
                 network.fetchNextTitle()
             }
-            titleDao.insertTitle(Title(result.toString()))
+            titleDao.insertTitle(Title(result))
         } catch (error: Throwable) {
             throw TitleRefreshError("Unable to refresh title", error)
         }

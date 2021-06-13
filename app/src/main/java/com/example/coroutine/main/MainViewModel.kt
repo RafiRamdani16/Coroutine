@@ -1,13 +1,13 @@
-package com.example.coroutine
+package com.example.coroutine.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.coroutine.util.singleArgViewModelFactory
+
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-
 
 class MainViewModel(private val repository: TitleRepository) : ViewModel() {
 

@@ -1,4 +1,4 @@
-package com.example.coroutine
+package com.example.coroutine.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProviders
+import com.example.coroutine.R
 import com.google.android.material.snackbar.Snackbar
 
 /**

@@ -24,6 +24,7 @@ import androidx.work.WorkManager
 import java.util.concurrent.TimeUnit
 import androidx.work.ExistingPeriodicWorkPolicy.KEEP
 import androidx.work.NetworkType.UNMETERED
+import com.example.coroutine.main.RefreshMainDataWork
 
 /**
  * Override application to setup background work via [WorkManager]
